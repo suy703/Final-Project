@@ -246,6 +246,22 @@ public class Driver extends Application implements ClientInfo {
 		dob3Text.setPrefWidth(88);
 		dob3Text.setPrefHeight(25);
 		
+		TextField lic1Text = new TextField();
+		lic1Text.setLayoutX(256);
+		lic1Text.setLayoutY(81);
+		lic1Text.setPrefWidth(89);
+		lic1Text.setPrefHeight(25);
+		TextField lic2Text = new TextField();
+		lic2Text.setLayoutX(256);
+		lic2Text.setLayoutY(145);
+		lic2Text.setPrefWidth(89);
+		lic2Text.setPrefHeight(25);
+		TextField lic3Text = new TextField();
+		lic3Text.setLayoutX(256);
+		lic3Text.setLayoutY(209);
+		lic3Text.setPrefWidth(89);
+		lic3Text.setPrefHeight(25);
+		
 		//BACK BUTTON
 		Button back = new Button("Back");
 		back.setOnAction(e -> {
@@ -268,7 +284,7 @@ public class Driver extends Application implements ClientInfo {
 		topPane.getChildren().add(menuBar);
 		centerPane.getChildren().addAll(title, driver1Name, driver2Name, driver3Name, dob1, dob2, dob3, license1,
 				license2, license3, age1, age2, age3, status1, status2, status3, driver1Text, driver2Text,
-				driver3Text, dob1Text, dob2Text, dob3Text);
+				driver3Text, dob1Text, dob2Text, dob3Text, lic1Text, lic2Text, lic3Text);
 		bottomPane.getChildren().addAll(back, submit);
 		scene3 = new Scene(borderPane);
 	}
