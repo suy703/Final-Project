@@ -32,18 +32,6 @@ public class Driver extends Application implements ClientInfo {
 	}
 	
 	public void generalInfo(Stage stage, Scene scene) {
-		BorderPane borderPane = new BorderPane();
-		borderPane.setPrefSize(600, 400);
-		VBox topPane = new VBox();
-		Pane centerPane1 = new Pane();
-		HBox bottomPane = new HBox();
-		bottomPane.setPrefHeight(69);
-		bottomPane.setAlignment(Pos.CENTER);
-		
-		borderPane.setTop(topPane);
-		borderPane.setCenter(centerPane1);
-		borderPane.setBottom(bottomPane);
-		
 		//MENU PROPERTIES
 		MenuBar menuBar = new MenuBar();
 		Menu menuFile = new Menu("File");
@@ -60,7 +48,29 @@ public class Driver extends Application implements ClientInfo {
 		// add Labels, TextFields, ChoiceBox, & CheckBox HERE
 		//
 		//
+		
+		
+		//Create TextField
+		Text ClientName = new Text("General information");
+		TextField t1 = new TextField();
+		TextField t2 = new TextField();
+		TextField t3 = new TextField();
+		TextField t4 = new TextField();
+		TextField t5 = new TextField();
+		TextField t6 = new TextField();
+		TextField t7 = new TextField();
+		
 		//
+		
+		//Labels
+		Label l1 = new Label("Name");
+		Label l2 = new Label("Address");
+		Label l3 = new Label("City");
+		Label l4 = new Label("State");
+		Label l5 = new Label("Zip");
+		Label l6 = new Label("Phone");
+		Label l7 = new Label("Email");
+		Label l8 = new Label("Do you own or rent your home");
 	
 		//NEXT BUTTON
 		Button next = new Button("Next");
@@ -71,13 +81,64 @@ public class Driver extends Application implements ClientInfo {
 			//
 		});
 		
+		Button ok = new Button("OK");
+		next.setOnAction(e -> {
+			stage.setScene(scene2);
+			//
+			// next window statements
+			//
+		});
+		
+		//Selecting Residence Status
+		final ComboBox<String> HomeComboBox = new ComboBox<String>();
+		HomeComboBox.getItems().addAll(
+		    "Yes",
+		    "No"
+		    );
+		
+		GridPane line1 = new GridPane();
+		line1.add(l1, 0, 0);
+		line1.add(t1,1, 0);
+		GridPane line2 = new GridPane();
+		line2.add(l2, 0, 0);
+		line2.add(t2,1, 0);
+		GridPane line3 = new GridPane();
+		line3.add(l3, 0, 0);
+		line3.add(t3,1, 0);
+		line3.add(l4, 2, 0);
+		line3.add(t4,3, 0);
+		line3.add(l5, 4, 0);
+		line3.add(t5,5, 0);
+		GridPane line4 = new GridPane();
+		line4.add(l6, 0, 0);
+		line4.add(t6,1, 0);
+		GridPane line5 = new GridPane();
+		line5.add(l7, 0, 0);
+		line5.add(t7,1, 0);
+		GridPane line6 = new GridPane();
+		line6.add(l8, 1, 0);
+		GridPane line7 = new GridPane();
+		
+		
+		
+		//form.add(child, columnIndex, rowIndex);
+		form.add(line1,0, 0);
+		form.add(line2,0, 1);
+		form.add(line3,0, 2);
+		form.add(line4,0, 3);
+		form.add(line5,0, 4);
+		form.add(line6,0, 5);
+		form.add(line7,0, 6);
+		
+		
+		
 		menuBar.getMenus().add(menuFile);
 		menuFile.getItems().add(exit);
 		
-		topPane.getChildren().add(menuBar);
-		centerPane1.getChildren().addAll(title1);
-		bottomPane.getChildren().add(next);
-		scene1 = new Scene(borderPane);
+		
+		scene1 = new Scene(form);
+	}
+
 	}
 	
 	public void vehicleInfo(Stage stage, Scene scene) {
