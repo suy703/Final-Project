@@ -38,8 +38,8 @@ public class Driver extends Application implements ClientInfo {
     		int countOfClientsReviewed = r.nextInt(49) + 950;
     		int totalNumOfClients = countOfClients - countOfClientsReviewed;
     		try {
-    			Runnable numOfClients = new Maintenance("qualify  ", countOfClients);
-			Runnable numOfClientsReviewed = new Maintenance("rejected ", countOfClientsReviewed);
+    			Runnable numOfClients = new Maintenance("pre-qualify ", countOfClients);
+			Runnable numOfClientsReviewed = new Maintenance("rejected    ", countOfClientsReviewed);
     		
     			Thread process1 = new Thread(numOfClients);
     			Thread process2 = new Thread(numOfClientsReviewed);
