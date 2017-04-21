@@ -24,7 +24,6 @@ public class Driver extends Application implements ClientInfo {
 	ChoiceBox<String> status1CB = new ChoiceBox<String>(FXCollections.observableArrayList(
 			"Single", "Married", "Divorced", "Widowed")
 	);
-	
 	ChoiceBox<String> status2CB = new ChoiceBox<String>(FXCollections.observableArrayList(
 			"Single", "Married", "Divorced", "Widowed")
 	);
