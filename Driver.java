@@ -2,6 +2,8 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -16,6 +18,17 @@ import javafx.stage.Stage;
 public class Driver extends Application implements ClientInfo {
 
 	Scene scene1, scene2, scene3;
+	
+	ChoiceBox<String> status1CB = new ChoiceBox<String>(FXCollections.observableArrayList(
+			"Single", "Married", "Divorced", "Widowed")
+	);
+	
+	ChoiceBox<String> status2CB = new ChoiceBox<String>(FXCollections.observableArrayList(
+			"Single", "Married", "Divorced", "Widowed")
+	);
+	ChoiceBox<String> status3CB = new ChoiceBox<String>(FXCollections.observableArrayList(
+			"Single", "Married", "Divorced", "Widowed")
+	);
 	
 	public static void main(String[] args) {
         launch(args);
@@ -323,6 +336,37 @@ public class Driver extends Application implements ClientInfo {
 		lic3Text.setPrefWidth(89);
 		lic3Text.setPrefHeight(25);
 		
+		TextField age1Text = new TextField();
+		age1Text.setLayoutX(359);
+		age1Text.setLayoutY(81);
+		age1Text.setPrefWidth(41);
+		age1Text.setPrefHeight(25);
+		TextField age2Text = new TextField();
+		age2Text.setLayoutX(359);
+		age2Text.setLayoutY(145);
+		age2Text.setPrefWidth(41);
+		age2Text.setPrefHeight(25);
+		TextField age3Text = new TextField();
+		age3Text.setLayoutX(359);
+		age3Text.setLayoutY(209);
+		age3Text.setPrefWidth(41);
+		age3Text.setPrefHeight(25);
+		
+		status1CB.setLayoutX(459);
+		status1CB.setLayoutY(81);
+		status1CB.setPrefWidth(127);
+		status1CB.setPrefHeight(25);
+		
+		status2CB.setLayoutX(459);
+		status2CB.setLayoutY(145);
+		status2CB.setPrefWidth(127);
+		status2CB.setPrefHeight(25);
+		
+		status3CB.setLayoutX(459);
+		status3CB.setLayoutY(209);
+		status3CB.setPrefWidth(127);
+		status3CB.setPrefHeight(25);
+		
 		//BACK BUTTON
 		Button back = new Button("Back");
 		back.setOnAction(e -> {
@@ -345,7 +389,8 @@ public class Driver extends Application implements ClientInfo {
 		topPane.getChildren().add(menuBar);
 		centerPane.getChildren().addAll(title, driver1Name, driver2Name, driver3Name, dob1, dob2, dob3, license1,
 				license2, license3, age1, age2, age3, status1, status2, status3, driver1Text, driver2Text,
-				driver3Text, dob1Text, dob2Text, dob3Text, lic1Text, lic2Text, lic3Text);
+				driver3Text, dob1Text, dob2Text, dob3Text, lic1Text, lic2Text, lic3Text, age1Text, age2Text, age3Text,
+				status1CB, status2CB, status3CB);
 		bottomPane.getChildren().addAll(back, submit);
 		scene3 = new Scene(borderPane);
 	}
