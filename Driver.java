@@ -31,8 +31,30 @@ public class Driver extends Application implements ClientInfo {
 	);
 	
 	public static void main(String[] args) {
-        launch(args);
-    }
+		
+		Random r = new Random();
+    		int countOfClients = 1000;
+    		int countOfClientsReviewed = r.nextInt(49) + 950;
+    		int totalNumOfClients = countOfClients - countOfClientsReviewed;
+    		try {
+    			Runnable numOfClients = new Maintenance("pass  ", countOfClients);
+			Runnable numOfClientsReviewed = new Maintenance("remove", countOfClientsReviewed);
+    		
+    			Thread process1 = new Thread(numOfClients);
+    			Thread process2 = new Thread(numOfClientsReviewed);
+    			Thread.sleep(countOfClientsReviewed);
+    			process1.start();
+    			process2.start();
+    		}
+    		catch(Exception e) {
+    			System.out.println("ERROR");
+    		}
+    		System.out.println("Number of clients: " + countOfClients);
+		System.out.println("Number of clients reviewed: " + countOfClientsReviewed + "\n");
+		System.out.println("Total number of clients left: " + totalNumOfClients);
+		
+        	launch(args);
+    	}
 	
 	public void start(Stage stage) {
 		
