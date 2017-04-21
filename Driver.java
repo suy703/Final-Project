@@ -367,6 +367,27 @@ public class Driver extends Application implements ClientInfo {
 		status3CB.setPrefWidth(127);
 		status3CB.setPrefHeight(25);
 		
+		CheckBox sexMcb1 = new CheckBox("Male");
+		sexMcb1.setLayoutX(21);
+		sexMcb1.setLayoutY(113);
+		CheckBox sexFcb1 = new CheckBox("Female");
+		sexFcb1.setLayoutX(75);
+		sexFcb1.setLayoutY(113);
+		
+		CheckBox sexMcb2 = new CheckBox("Male");
+		sexMcb2.setLayoutX(21);
+		sexMcb2.setLayoutY(177);
+		CheckBox sexFcb2 = new CheckBox("Female");
+		sexFcb2.setLayoutX(75);
+		sexFcb2.setLayoutY(177);
+		
+		CheckBox sexMcb3 = new CheckBox("Male");
+		sexMcb3.setLayoutX(21);
+		sexMcb3.setLayoutY(241);
+		CheckBox sexFcb3 = new CheckBox("Female");
+		sexFcb3.setLayoutX(75);
+		sexFcb3.setLayoutY(241);
+		
 		//BACK BUTTON
 		Button back = new Button("Back");
 		back.setOnAction(e -> {
@@ -390,7 +411,7 @@ public class Driver extends Application implements ClientInfo {
 		centerPane.getChildren().addAll(title, driver1Name, driver2Name, driver3Name, dob1, dob2, dob3, license1,
 				license2, license3, age1, age2, age3, status1, status2, status3, driver1Text, driver2Text,
 				driver3Text, dob1Text, dob2Text, dob3Text, lic1Text, lic2Text, lic3Text, age1Text, age2Text, age3Text,
-				status1CB, status2CB, status3CB);
+				status1CB, status2CB, status3CB, sexMcb1, sexFcb1, sexMcb2, sexFcb2, sexMcb3, sexFcb3);
 		bottomPane.getChildren().addAll(back, submit);
 		scene3 = new Scene(borderPane);
 	}
