@@ -249,6 +249,7 @@ public class Driver extends Application implements ClientInfo {
 		borderPane.setCenter(centerPane);
 		borderPane.setBottom(bottomPane);
 		
+		//TOP PANE----------------------------------------------------------------------------------------------
 		//MENU PROPERTIES
 		MenuBar menuBar = new MenuBar();
 		Menu menuFile = new Menu("File");
@@ -257,6 +258,7 @@ public class Driver extends Application implements ClientInfo {
 		    System.exit(0);
 		});
 		
+		//CENTER PANE-------------------------------------------------------------------------------------------
 		//TITLE
 		Label title = new Label("Driver Information");
 		title.setLayoutX(230);
@@ -412,6 +414,7 @@ public class Driver extends Application implements ClientInfo {
 		sexFcb3.setLayoutX(75);
 		sexFcb3.setLayoutY(241);
 		
+		//BOTTOM PANE-------------------------------------------------------------------------------------------
 		//BACK BUTTON
 		Button back = new Button("Back");
 		back.setOnAction(e -> {
