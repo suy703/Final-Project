@@ -33,6 +33,7 @@ public class Driver extends Application implements ClientInfo {
 	
 	public static void main(String[] args) {
 		
+		//RUNNABLE & THREADS------------------------------------------------------------------------------------
 		Random r = new Random();
     		int countOfClients = 1000;
     		int countOfClientsReviewed = r.nextInt(49) + 950;
