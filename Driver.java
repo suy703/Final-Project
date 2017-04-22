@@ -3,6 +3,8 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -21,6 +23,10 @@ public class Driver extends Application implements ClientInfo {
 
 	Scene scene1, scene2, scene3;
 	
+	int dob1Int = 0;
+	int age1Int = 0;
+	boolean male = false;
+	boolean female = false;
 	ChoiceBox<String> status1CB = new ChoiceBox<String>(FXCollections.observableArrayList(
 			"Single", "Married", "Divorced", "Widowed")
 	);
@@ -428,7 +434,46 @@ public class Driver extends Application implements ClientInfo {
 		//NEXT BUTTON
 		Button submit = new Button("Submit");
 		submit.setOnAction(e -> {
-			System.exit(0);
+			male = sexMcb1.isSelected();
+			female = sexFcb1.isSelected();
+			int legalAge = 15;
+			int maxAge = 100;
+			if((dob1Text.getText().equals("")) || (age1Text.getText().equals(""))) {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Error Dialog");
+				alert.setHeaderText("Please enter an age. Must be 15 years or older");
+				alert.showAndWait();
+			}
+			else {
+				dob1Int = Integer.parseInt(dob1Text.getText());
+				age1Int = Integer.parseInt(age1Text.getText());
+			}
+			//AGE RULE
+			if(!(dob1Int > legalAge) && (dob1Int < maxAge)) {
+				
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Error Dialog");
+				alert.setHeaderText("Please enter an age. Must be 15 years or older");
+				alert.showAndWait();
+			}
+			//AGE FIRST LICENSE RULE
+			else if(!(age1Int > legalAge) && (age1Int < maxAge)) {
+				
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Error Dialog");
+				alert.setHeaderText("Please enter an age for Age First License. Must be 15 years or older");
+				alert.showAndWait();
+			}
+			//SEX RULE
+			else if(male == true && female == true) {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Error Dialog");
+				alert.setHeaderText("Please choose Male OR Female");
+				alert.showAndWait();
+			}
+			else {
+				System.exit(0);
+			}
 		});
 		
 		menuBar.getMenus().add(menuFile);
