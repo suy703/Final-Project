@@ -280,13 +280,13 @@ public class Driver extends Application implements ClientInfo {
 		driver3Name.setLayoutX(14);
 		driver3Name.setLayoutY(194);
 		
-		Label dob1 = new Label("Date of Birth:");
+		Label dob1 = new Label("Age:");
 		dob1.setLayoutX(152);
 		dob1.setLayoutY(66);
-		Label dob2 = new Label("Date of Birth:");
+		Label dob2 = new Label("Age:");
 		dob2.setLayoutX(152);
 		dob2.setLayoutY(130);
-		Label dob3 = new Label("Date of Birth:");
+		Label dob3 = new Label("Age:");
 		dob3.setLayoutX(152);
 		dob3.setLayoutY(194);
 
@@ -339,17 +339,17 @@ public class Driver extends Application implements ClientInfo {
 		TextField dob1Text = new TextField();
 		dob1Text.setLayoutX(152);
 		dob1Text.setLayoutY(81);
-		dob1Text.setPrefWidth(88);
+		dob1Text.setPrefWidth(41);
 		dob1Text.setPrefHeight(25);
 		TextField dob2Text = new TextField();
 		dob2Text.setLayoutX(152);
 		dob2Text.setLayoutY(145);
-		dob2Text.setPrefWidth(88);
+		dob2Text.setPrefWidth(41);
 		dob2Text.setPrefHeight(25);
 		TextField dob3Text = new TextField();
 		dob3Text.setLayoutX(152);
 		dob3Text.setLayoutY(209);
-		dob3Text.setPrefWidth(88);
+		dob3Text.setPrefWidth(41);
 		dob3Text.setPrefHeight(25);
 		
 		TextField lic1Text = new TextField();
