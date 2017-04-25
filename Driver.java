@@ -8,15 +8,18 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Driver extends Application implements ClientInfo {
@@ -82,17 +85,17 @@ public class Driver extends Application implements ClientInfo {
 		exit.setOnAction(e -> {
 		    System.exit(0);
 		});
-		
+
 		//TITLE
 		Label title1 = new Label("General Information");
 		title1.setLayoutX(230);
 		title1.setLayoutY(27);
-		
+
 		// add Labels, TextFields, ChoiceBox, & CheckBox HERE
 		//
 		//
-		
-		
+
+
 		//Create TextField
 		Text ClientName = new Text("General information");
 		TextField t1 = new TextField();
@@ -102,9 +105,9 @@ public class Driver extends Application implements ClientInfo {
 		TextField t5 = new TextField();
 		TextField t6 = new TextField();
 		TextField t7 = new TextField();
-		
+
 		//
-		
+
 		//Labels
 		Label l1 = new Label("Name");
 		Label l2 = new Label("Address");
@@ -114,37 +117,39 @@ public class Driver extends Application implements ClientInfo {
 		Label l6 = new Label("Phone");
 		Label l7 = new Label("Email");
 		Label l8 = new Label("Do you own or rent your home");
-	
+
 		//NEXT BUTTON
 		Button next = new Button("Next");
 		next.setOnAction(e -> {
-			stage.setScene(scene2);
-			//
-			// next window statements
-			//
+		stage.setScene(scene2);
+		//
+		// next window statements
+		//
 		});
-		
+
 		Button ok = new Button("OK");
 		next.setOnAction(e -> {
-			stage.setScene(scene2);
-			//
-			// next window statements
-			//
+		stage.setScene(scene2);
+		//
+		// next window statements
+		//
 		});
-		
+
 		//Selecting Residence Status
 		final ComboBox<String> HomeComboBox = new ComboBox<String>();
 		HomeComboBox.getItems().addAll(
 		    "Yes",
 		    "No"
 		    );
-		
+
 		GridPane line1 = new GridPane();
 		line1.add(l1, 0, 0);
 		line1.add(t1,1, 0);
+		line1.setHgap(20);
 		GridPane line2 = new GridPane();
 		line2.add(l2, 0, 0);
 		line2.add(t2,1, 0);
+		line2.setHgap(20);
 		GridPane line3 = new GridPane();
 		line3.add(l3, 0, 0);
 		line3.add(t3,1, 0);
@@ -152,18 +157,37 @@ public class Driver extends Application implements ClientInfo {
 		line3.add(t4,3, 0);
 		line3.add(l5, 4, 0);
 		line3.add(t5,5, 0);
+		line3.setHgap(20);
 		GridPane line4 = new GridPane();
 		line4.add(l6, 0, 0);
 		line4.add(t6,1, 0);
+		line4.setHgap(20);
 		GridPane line5 = new GridPane();
 		line5.add(l7, 0, 0);
 		line5.add(t7,1, 0);
+		line5.setHgap(20);
 		GridPane line6 = new GridPane();
 		line6.add(l8, 1, 0);
+		line6.setHgap(20);
 		GridPane line7 = new GridPane();
-		
-		
-		
+		line6.add(HomeComboBox, 2, 0);
+		//line7.add(ok, 2, 0);
+		//line7.add(next,3, 0);
+
+		HBox hbox = new HBox();
+		hbox.setAlignment(Pos.CENTER_LEFT);
+		hbox.getChildren().add(ok);
+		hbox.getChildren().add(next);
+		line7.add(hbox, 4, 0);
+
+
+
+		line7.setHgap(55);
+		ok.setAlignment(Pos.CENTER_LEFT);
+		next.setAlignment(Pos.CENTER_RIGHT);
+
+
+		GridPane form = new GridPane();
 		//form.add(child, columnIndex, rowIndex);
 		form.add(line1,0, 0);
 		form.add(line2,0, 1);
@@ -172,15 +196,16 @@ public class Driver extends Application implements ClientInfo {
 		form.add(line5,0, 4);
 		form.add(line6,0, 5);
 		form.add(line7,0, 6);
-		
-		
-		
+		form.setVgap(20);
+
+
+
+
 		menuBar.getMenus().add(menuFile);
 		menuFile.getItems().add(exit);
-		
-		
+
+
 		scene1 = new Scene(form);
-	}
 
 	}
 	
