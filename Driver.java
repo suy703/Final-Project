@@ -85,17 +85,12 @@ public class Driver extends Application implements ClientInfo {
 		exit.setOnAction(e -> {
 		    System.exit(0);
 		});
-
+		 
 		//TITLE
 		Label title1 = new Label("General Information");
 		title1.setLayoutX(230);
 		title1.setLayoutY(27);
-
-		// add Labels, TextFields, ChoiceBox, & CheckBox HERE
-		//
-		//
-
-
+		 
 		//Create TextField
 		Text ClientName = new Text("General information");
 		TextField t1 = new TextField();
@@ -105,9 +100,7 @@ public class Driver extends Application implements ClientInfo {
 		TextField t5 = new TextField();
 		TextField t6 = new TextField();
 		TextField t7 = new TextField();
-
-		//
-
+		 
 		//Labels
 		Label l1 = new Label("Name");
 		Label l2 = new Label("Address");
@@ -117,7 +110,7 @@ public class Driver extends Application implements ClientInfo {
 		Label l6 = new Label("Phone");
 		Label l7 = new Label("Email");
 		Label l8 = new Label("Do you own or rent your home");
-
+		 
 		//NEXT BUTTON
 		Button next = new Button("Next");
 		next.setOnAction(e -> {
@@ -126,22 +119,14 @@ public class Driver extends Application implements ClientInfo {
 		// next window statements
 		//
 		});
-
-		Button ok = new Button("OK");
-		next.setOnAction(e -> {
-		stage.setScene(scene2);
-		//
-		// next window statements
-		//
-		});
-
+		 
 		//Selecting Residence Status
 		final ComboBox<String> HomeComboBox = new ComboBox<String>();
 		HomeComboBox.getItems().addAll(
 		    "Yes",
 		    "No"
 		    );
-
+		 
 		GridPane line1 = new GridPane();
 		line1.add(l1, 0, 0);
 		line1.add(t1,1, 0);
@@ -173,20 +158,15 @@ public class Driver extends Application implements ClientInfo {
 		line6.add(HomeComboBox, 2, 0);
 		//line7.add(ok, 2, 0);
 		//line7.add(next,3, 0);
-
+		 
 		HBox hbox = new HBox();
 		hbox.setAlignment(Pos.CENTER_LEFT);
-		hbox.getChildren().add(ok);
 		hbox.getChildren().add(next);
 		line7.add(hbox, 4, 0);
-
-
-
+		 
 		line7.setHgap(55);
-		ok.setAlignment(Pos.CENTER_LEFT);
 		next.setAlignment(Pos.CENTER_RIGHT);
-
-
+		 
 		GridPane form = new GridPane();
 		//form.add(child, columnIndex, rowIndex);
 		form.add(line1,0, 0);
@@ -197,16 +177,11 @@ public class Driver extends Application implements ClientInfo {
 		form.add(line6,0, 5);
 		form.add(line7,0, 6);
 		form.setVgap(20);
-
-
-
-
+	
 		menuBar.getMenus().add(menuFile);
 		menuFile.getItems().add(exit);
-
-
+		 
 		scene1 = new Scene(form);
-
 	}
 	
 	public void vehicleInfo(Stage stage, Scene scene) {
