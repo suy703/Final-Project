@@ -30,6 +30,7 @@ public class Driver extends Application implements ClientInfo {
 	int age1Int = 0;
 	boolean male = false;
 	boolean female = false;
+	String gender = "";
 	ChoiceBox<String> status1CB = new ChoiceBox<String>(FXCollections.observableArrayList(
 			"Single", "Married", "Divorced", "Widowed")
 	);
@@ -44,28 +45,28 @@ public class Driver extends Application implements ClientInfo {
 		
 		//RUNNABLE & THREADS------------------------------------------------------------------------------------
 		Random r = new Random();
-    		int countOfClients = 1000;
-    		int countOfClientsReviewed = r.nextInt(49) + 950;
-    		int totalNumOfClients = countOfClients - countOfClientsReviewed;
-    		try {
-    			Runnable numOfClients = new Maintenance("active   ", countOfClients);
+		int countOfClients = 1000;
+		int countOfClientsReviewed = r.nextInt(49) + 950;
+		int totalNumOfClients = countOfClients - countOfClientsReviewed;
+		try {
+			Runnable numOfClients = new Maintenance("active   ", countOfClients);
 			Runnable numOfClientsReviewed = new Maintenance("inactive ", countOfClientsReviewed);
-    		
-    			Thread process1 = new Thread(numOfClients);
-    			Thread process2 = new Thread(numOfClientsReviewed);
-    			Thread.sleep(countOfClientsReviewed);
-    			process1.start();
-    			process2.start();
-    		}
-    		catch(Exception e) {
-    			System.out.println("ERROR");
-    		}
-    		System.out.println("Number of clients: " + countOfClients);
+		
+			Thread process1 = new Thread(numOfClients);
+			Thread process2 = new Thread(numOfClientsReviewed);
+			Thread.sleep(countOfClientsReviewed);
+			process1.start();
+			process2.start();
+		}
+		catch(Exception e) {
+			System.out.println("ERROR");
+		}
+		System.out.println("Number of clients: " + countOfClients);
 		System.out.println("Number of clients reviewed: " + countOfClientsReviewed + "\n");
 		System.out.println("Total number of clients left: " + totalNumOfClients);
-		
-        	launch(args);
-    	}
+	
+    	launch(args);
+    }
 	
 	public void start(Stage stage) {
 		
@@ -197,6 +198,7 @@ public class Driver extends Application implements ClientInfo {
 		borderPane.setCenter(centerPane);
 		borderPane.setBottom(bottomPane);
 		
+		//TOP PANE----------------------------------------------------------------------------------------------
 		//MENU PROPERTIES
 		MenuBar menuBar = new MenuBar();
 		Menu menuFile = new Menu("File");
@@ -205,16 +207,159 @@ public class Driver extends Application implements ClientInfo {
 		    System.exit(0);
 		});
 		
+		//CENTER PANE-------------------------------------------------------------------------------------------
 		//TITLE
 		Label title = new Label("Vehicle Information");
 		title.setLayoutX(230);
 		title.setLayoutY(27);
 		
-		// add Labels, TextFields, ChoiceBox, & CheckBox HERE
-		//
-		//
-		//
+		Label lb1 = new Label("Vehicle #1 Year: ");
+		lb1.setLayoutX(52);
+		lb1.setLayoutY(66);
+		TextField tx1 = new TextField();
+		tx1.setLayoutX(52);
+		tx1.setLayoutY(81);
+		tx1.setPrefHeight(25);
+		tx1.setPrefWidth(54);
 		
+		Label lb2 = new Label("Vehicle #2 Year:");
+		lb2.setLayoutX(52);
+		lb2.setLayoutY(108);
+		TextField tx2 = new TextField();
+		tx2.setLayoutX(52);
+		tx2.setLayoutY(123);
+		tx2.setPrefHeight(25);
+		tx2.setPrefWidth(54);
+		
+		Label lb3 = new Label("Vehicle #3 Year:");
+		lb3.setLayoutX(52);
+		lb3.setLayoutY(153);
+		TextField tx3 = new TextField();
+		tx3.setLayoutX(52);
+		tx3.setLayoutY(169);
+		tx3.setPrefHeight(25);
+		tx3.setPrefWidth(54);
+		
+		Label lb4 = new Label("Vehicle #4 Year:");
+		lb4.setLayoutX(52);
+		lb4.setLayoutY(200);
+		
+		TextField tx4 = new TextField();
+		tx4.setLayoutX(52);
+		tx4.setLayoutY(215);
+		tx4.setPrefHeight(25);
+		tx4.setPrefWidth(54);
+		
+		Label lb5 = new Label("Make:");
+		lb5.setLayoutX(152);
+		lb5.setLayoutY(66);
+		TextField tx5 = new TextField();
+		tx5.setLayoutX(152);
+		tx5.setLayoutY(81);
+		tx5.setPrefHeight(25);
+		tx5.setPrefWidth(88);
+		
+		Label lb6 = new Label("Make:");
+		lb6.setLayoutX(152);
+		lb6.setLayoutY(108);
+		TextField tx6 = new TextField();
+		tx6.setLayoutX(152);
+		tx6.setLayoutY(123);
+		tx6.setPrefHeight(25);
+		tx6.setPrefWidth(88);
+		
+		Label lb7 = new Label("Make:");
+		lb7.setLayoutX(152);
+		lb7.setLayoutY(154);
+		TextField tx7 = new TextField();
+		tx7.setLayoutX(152);
+		tx7.setLayoutY(169);
+		tx7.setPrefHeight(25);
+		tx7.setPrefWidth(88);
+		
+		Label lb8 = new Label("Make:");
+		lb8.setLayoutX(152);
+		lb8.setLayoutY(200);
+		TextField tx8 = new TextField();
+		tx8.setLayoutX(152);
+		tx8.setLayoutY(215);
+		tx8.setPrefHeight(25);
+		tx8.setPrefWidth(88);
+		
+		Label lb9 = new Label("Model:");
+		lb9.setLayoutX(256);
+		lb9.setLayoutY(66);
+		TextField tx9 = new TextField();
+		tx9.setLayoutX(256);
+		tx9.setLayoutY(81);
+		tx9.setPrefHeight(25);
+		tx9.setPrefWidth(89);
+		
+		
+		Label lb10 = new Label("Model:");
+		lb10.setLayoutX(256);
+		lb10.setLayoutY(108);
+		TextField tx10 = new TextField();
+		tx10.setLayoutY(123);
+		tx10.setLayoutX(256);
+		tx10.setPrefHeight(25);
+		tx10.setPrefWidth(88);
+		
+		Label lb11 = new Label("Model:");
+		lb11.setLayoutX(256);
+		lb11.setLayoutY(154);
+		TextField tx11 = new TextField();
+		tx11.setLayoutX(256);
+		tx11.setLayoutY(169);
+		tx11.setPrefHeight(25);
+		tx11.setPrefWidth(88);
+		
+		Label lb12 = new Label("Model:");
+		lb12.setLayoutX(256);
+		lb12.setLayoutY(200);
+		TextField tx12 = new TextField();
+		tx12.setLayoutX(256);
+		tx12.setLayoutY(215);
+		tx12.setPrefHeight(25);
+		tx12.setPrefWidth(88);
+		
+		Label lb13 = new Label("Miles Driven Per Year:");
+		lb13.setLayoutX(362);
+		lb13.setLayoutY(85);
+		TextField tx13 = new TextField();
+		tx13.setLayoutX(475);
+		tx13.setLayoutY(81);
+		tx13.setPrefHeight(25);
+		tx13.setPrefWidth(74);
+		
+		Label lb14 = new Label("Miles Driven Per Year:");
+		lb14.setLayoutX(362);
+		lb14.setLayoutY(127);
+		TextField tx14 = new TextField();
+		tx14.setLayoutX(475);
+		tx14.setLayoutY(123);
+		tx14.setPrefHeight(25);
+		tx14.setPrefWidth(74);
+		
+		Label lb15 = new Label("Miles Driven Per Year:");
+		lb15.setLayoutX(362);
+		lb15.setLayoutY(173);
+		TextField tx15 = new TextField();
+		tx15.setLayoutX(475);
+		tx15.setLayoutY(169);
+		tx15.setPrefHeight(25);
+		tx15.setPrefWidth(74);
+		
+		Label lb16 = new Label("Miles Driven Per Year:");
+		lb16.setLayoutX(362);
+		lb16.setLayoutY(219);
+		TextField tx16 = new TextField();
+		tx16.setLayoutX(475);
+		tx16.setLayoutY(215);
+		tx16.setPrefHeight(25);
+		tx16.setPrefWidth(74);
+		
+		//BOTTOM PANE-------------------------------------------------------------------------------------------
 		//BACK BUTTON
 		Button back = new Button("Back");
 		back.setOnAction(e -> {
@@ -237,7 +382,8 @@ public class Driver extends Application implements ClientInfo {
 		menuFile.getItems().add(exit);
 		
 		topPane.getChildren().add(menuBar);
-		centerPane.getChildren().addAll(title);
+		centerPane.getChildren().addAll(title,lb1,tx1, lb2, lb3, tx2, tx3, lb4,tx4, lb5,tx5,lb6,tx6,lb7,tx7,
+				tx8,lb8,lb9,tx9,tx10,lb10,tx11,lb11,tx12,lb12,tx13,lb13,tx14,lb14,tx15,lb15,tx16,lb16);
 		bottomPane.getChildren().addAll(back, next);
 		scene2 = new Scene(borderPane);
 	}
@@ -373,6 +519,7 @@ public class Driver extends Application implements ClientInfo {
 		age1Text.setLayoutY(81);
 		age1Text.setPrefWidth(41);
 		age1Text.setPrefHeight(25);
+		
 		TextField age2Text = new TextField();
 		age2Text.setLayoutX(359);
 		age2Text.setLayoutY(145);
@@ -402,9 +549,12 @@ public class Driver extends Application implements ClientInfo {
 		CheckBox sexMcb1 = new CheckBox("Male");
 		sexMcb1.setLayoutX(21);
 		sexMcb1.setLayoutY(113);
+		
+		
 		CheckBox sexFcb1 = new CheckBox("Female");
 		sexFcb1.setLayoutX(75);
 		sexFcb1.setLayoutY(113);
+		
 		
 		CheckBox sexMcb2 = new CheckBox("Male");
 		sexMcb2.setLayoutX(21);
@@ -425,19 +575,18 @@ public class Driver extends Application implements ClientInfo {
 		Button back = new Button("Back");
 		back.setOnAction(e -> {
 			stage.setScene(scene2);
-			
-			//
-			// next window statements
-			//
+
 		});
 	
 		//NEXT BUTTON
 		Button submit = new Button("Submit");
 		submit.setOnAction(e -> {
+			
 			male = sexMcb1.isSelected();
 			female = sexFcb1.isSelected();
 			int legalAge = 15;
 			int maxAge = 100;
+			
 			if((dob1Text.getText().equals("")) || (age1Text.getText().equals(""))) {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Error Dialog");
@@ -447,6 +596,12 @@ public class Driver extends Application implements ClientInfo {
 			else {
 				dob1Int = Integer.parseInt(dob1Text.getText());
 				age1Int = Integer.parseInt(age1Text.getText());
+			}
+			if(male == true && female == false) {
+				gender = "male";
+			}
+			else if(male == false && female == true) {
+				gender = "female";
 			}
 			//AGE RULE
 			if(!(dob1Int > legalAge) && (dob1Int < maxAge)) {
@@ -466,14 +621,20 @@ public class Driver extends Application implements ClientInfo {
 			}
 			//SEX RULE
 			else if(male == true && female == true) {
+				
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Error Dialog");
 				alert.setHeaderText("Please choose Male OR Female");
 				alert.showAndWait();
+				male = false;
+				female = false;
 			}
 			else {
+				Generics.results(dob1Int, gender);
+				Generics.getResults(dob1Int, gender);
 				System.exit(0);
 			}
+			
 		});
 		
 		menuBar.getMenus().add(menuFile);
