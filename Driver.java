@@ -43,7 +43,7 @@ public class Driver extends Application implements ClientInfo {
 	
 	public static void main(String[] args) {
 		
-		//RUNNABLE & THREADS------------------------------------------------------------------------------------
+		//THREADS===============================================================================================
 		Random r = new Random();
 		int countOfClients = 1000;
 		int countOfClientsReviewed = r.nextInt(49) + 950;
@@ -116,9 +116,6 @@ public class Driver extends Application implements ClientInfo {
 		Button next = new Button("Next");
 		next.setOnAction(e -> {
 		stage.setScene(scene2);
-		//
-		// next window statements
-		//
 		});
 		 
 		//Selecting Residence Status
@@ -198,7 +195,7 @@ public class Driver extends Application implements ClientInfo {
 		borderPane.setCenter(centerPane);
 		borderPane.setBottom(bottomPane);
 		
-		//TOP PANE----------------------------------------------------------------------------------------------
+		//TOP PANE------------------------------------------------------------------
 		//MENU PROPERTIES
 		MenuBar menuBar = new MenuBar();
 		Menu menuFile = new Menu("File");
@@ -207,7 +204,7 @@ public class Driver extends Application implements ClientInfo {
 		    System.exit(0);
 		});
 		
-		//CENTER PANE-------------------------------------------------------------------------------------------
+		//CENTER PANE---------------------------------------------------------------
 		//TITLE
 		Label title = new Label("Vehicle Information");
 		title.setLayoutX(230);
@@ -359,7 +356,7 @@ public class Driver extends Application implements ClientInfo {
 		tx16.setPrefHeight(25);
 		tx16.setPrefWidth(74);
 		
-		//BOTTOM PANE-------------------------------------------------------------------------------------------
+		//BOTTOM PANE---------------------------------------------------------------
 		//BACK BUTTON
 		Button back = new Button("Back");
 		back.setOnAction(e -> {
@@ -401,7 +398,7 @@ public class Driver extends Application implements ClientInfo {
 		borderPane.setCenter(centerPane);
 		borderPane.setBottom(bottomPane);
 		
-		//TOP PANE----------------------------------------------------------------------------------------------
+		//TOP PANE------------------------------------------------------------------
 		//MENU PROPERTIES
 		MenuBar menuBar = new MenuBar();
 		Menu menuFile = new Menu("File");
@@ -410,7 +407,7 @@ public class Driver extends Application implements ClientInfo {
 		    System.exit(0);
 		});
 		
-		//CENTER PANE-------------------------------------------------------------------------------------------
+		//CENTER PANE---------------------------------------------------------------
 		//TITLE
 		Label title = new Label("Driver Information");
 		title.setLayoutX(230);
@@ -570,7 +567,7 @@ public class Driver extends Application implements ClientInfo {
 		sexFcb3.setLayoutX(75);
 		sexFcb3.setLayoutY(241);
 		
-		//BOTTOM PANE-------------------------------------------------------------------------------------------
+		//BOTTOM PANE---------------------------------------------------------------
 		//BACK BUTTON
 		Button back = new Button("Back");
 		back.setOnAction(e -> {
@@ -603,7 +600,7 @@ public class Driver extends Application implements ClientInfo {
 			else if(male == false && female == true) {
 				gender = "female";
 			}
-			//AGE RULE
+			//AGE ERROR
 			if(!(dob1Int > legalAge) && (dob1Int < maxAge)) {
 				
 				Alert alert = new Alert(AlertType.ERROR);
@@ -611,7 +608,7 @@ public class Driver extends Application implements ClientInfo {
 				alert.setHeaderText("Please enter an age. Must be 15 years or older");
 				alert.showAndWait();
 			}
-			//AGE FIRST LICENSE RULE
+			//AGE FIRST LICENSE ERROR
 			else if(!(age1Int > legalAge) && (age1Int < maxAge)) {
 				
 				Alert alert = new Alert(AlertType.ERROR);
@@ -619,7 +616,7 @@ public class Driver extends Application implements ClientInfo {
 				alert.setHeaderText("Please enter an age for Age First License. Must be 15 years or older");
 				alert.showAndWait();
 			}
-			//SEX RULE
+			//SEX ERROR
 			else if(male == true && female == true) {
 				
 				Alert alert = new Alert(AlertType.ERROR);
@@ -630,6 +627,7 @@ public class Driver extends Application implements ClientInfo {
 				female = false;
 			}
 			else {
+				//GENERIC CLASS/METHOD==========================================================================
 				Generics.results(dob1Int, gender);
 				Generics.getResults(dob1Int, gender);
 				System.exit(0);
